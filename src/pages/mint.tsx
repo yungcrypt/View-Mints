@@ -7,9 +7,6 @@ import { useWallet } from "@solana/wallet-adapter-react";
 
 export const MintPage: FC = () => {
   const { publicKey } = useWallet();
-  const candyMachineId = new anc.web3.PublicKey(
-    "4Ei6S1UzKdJB5jEQ62YJYBAirVTnivoqFDyFFRaqbzQ6"
-  );
   const network = "devnet" as WalletAdapterNetwork;
   const rpcHost = "https://api.devnet.solana.com";
   const connection = new anc.web3.Connection(
@@ -19,16 +16,26 @@ export const MintPage: FC = () => {
   return (
     <>
       <Navbar />
-      <div className="App-header">
         {publicKey && (
+      <div className="App-header">
           <Mint
-            candyMachineId={candyMachineId}
+            candyMachineId={new anc.web3.PublicKey(
+    "GEoLprSfmRdkQ9UBhsZLNo8yyMkJXTfYBQXgshB91YNw"
+  )}
             connection={connection}
             rpcHost={rpcHost}
             network={network}
           />
-        )}
+          <Mint
+            candyMachineId={new anc.web3.PublicKey(
+    "4Ei6S1UzKdJB5jEQ62YJYBAirVTnivoqFDyFFRaqbzQ6"
+  )}
+            connection={connection}
+            rpcHost={rpcHost}
+            network={network}
+          />
       </div>
+        )}
     </>
   );
 };

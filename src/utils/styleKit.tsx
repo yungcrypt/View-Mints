@@ -191,4 +191,9 @@ height: auto;
 .MuiInputBase-input {
 color: ${Theme.typography.body1.color};
 }
+
+.mint-container {
+  width: 30vw;
+}
+
 `;

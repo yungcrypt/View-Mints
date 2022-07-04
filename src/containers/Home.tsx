@@ -17,6 +17,19 @@ export const Home = () => {
           width: "100vw",
         }}
       >
+        <Grid item xs={4}>
+        </Grid>
+        <Grid item xs={4}>
+          <Linktree
+            i={3}
+            title={"Mint Test Apes"}
+            subtitle={"NOT INTERNAL AND CONFIDENTIAL MINTING PAGE!"}
+            link={"/mint"}
+            cover={"/github.png"}
+          />
+        </Grid>
+        <Grid item xs={4}>
+        </Grid>
         <Grid item xs={1}>
         </Grid>
         <Grid item xs={5}>
