@@ -541,11 +541,7 @@ export const QuestsGallery = () => {
 
         if (Object.keys(enrollQuesteesIx).length > 0) {
 
-          setActiveQuestProposals((prev) => {
-            const newArr = Object.assign([], prev);
-            newArr.push(enrollQuesteesIx.proposalIndex);
-            return newArr;
-          });
+          setActiveQuestProposals([enrollQuesteesIx.proposalIndex]);
 
           const enrollQuesteesTx = Transaction.populate(
             new Message(enrollQuesteesIx.transaction.message)
