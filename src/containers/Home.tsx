@@ -37,7 +37,7 @@ export const Home = () => {
             i={3}
             title={"xQuesting"}
             subtitle={"A P2E Staking Game!"}
-            link={"/questing"}
+            link={"/xquesting"}
             cover={"/github.png"}
           />
         </Grid>
