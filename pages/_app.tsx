@@ -19,6 +19,7 @@ import { FC, useMemo } from "react";
 import { GlobalStyle } from "../src/utils/styleKit";
 
 import "abort-controller/polyfill";
+import "node_modules/video-react/dist/video-react.css"
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 require("../styles/globals.css");

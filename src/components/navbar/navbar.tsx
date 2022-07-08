@@ -7,10 +7,11 @@ import styled from "styled-components";
 import Theme from "../../utils/theme/theme";
 import Image from "next/image";
 import Link from "next/link";
+import { useWallet } from "@solana/wallet-adapter-react";
 import { Grid } from "@mui/material";
 
 const TopBar = styled.div`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
@@ -19,26 +20,17 @@ const TopBar = styled.div`
 export const Navbar = () => {
   return (
     <TopBar id="topbar">
-      <Grid container sx={{ width: "100vw", display: "flex" }}>
-        <Grid item style={{ position: "relative" }} xs={4}>
-          <Image
-            src={process.env.NEXT_PUBLIC_LOGO_FILE!}
-            width={300}
-            layout="fill"
-            objectFit="contain"
-            alt="logo"
-          />
-        </Grid>
+      <Grid container sx={{ width: "100vw", justifyContent:"center" }}>
 
-        <Grid item xs={4} />
         <Grid
           item
           style={{
             display: "flex",
-            justifyContent: "right",
+            justifyContent: "center",
+            
+            width:"100vw",
             paddingRight: "1%",
           }}
-          xs={4}
         >
           <WalletMultiButton />
         </Grid>

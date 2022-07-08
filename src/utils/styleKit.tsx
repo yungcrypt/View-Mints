@@ -7,75 +7,61 @@ export const GlobalStyle = createGlobalStyle`
   src: url(${Theme.typography.url}) format('woff2');
 }
 
+.MuiBackdrop-root {
+    background: rgb(0,0,0,0.8);
+}
+
+.fade { 
+      -moz-transition: all .2s ease-in;
+          -o-transition: all .2s ease-in;
+              -webkit-transition: all .2s ease-in;
+                  transition: all .2s ease-in;
+                      background-color: transparent; 
+}
+.fade:hover {
+    background-color: black;
+}
+
 .MuiTypography-caption {
   font-family: 'Silkscreen' !important;
-  color: ${Theme.typography.body1.color} !important;
+  color: white;
 }
 .MuiTypography-body2 {
   font-family: 'Silkscreen' !important;
+  color: white;
 }
 button[class*="CTAButton"] {
   font-family: 'Silkscreen' !important;
-  background: ${Theme.palette.secondary.main} !important;
-  color: ${Theme.typography.body1.color} !important;
+  color: white;
+  font-size:30px;
+  border: 2px solid white;
 }
 .MuiTypography-colorTextSecondary {
   font-family: 'Silkscreen' !important;
-  color: ${Theme.typography.body1.color} !important;
+  color: white;
 }
 .MuiTypography-colorTextPrimary {
   font-family: 'Silkscreen' !important;
-  color: ${Theme.typography.body1.color} !important;
+  color: white;
 }
 
 .wallet-adapter-button {
-  font-family: "Silkscreen" !important;
-  color: ${Theme.typography.body1.color} !important;
   background-color: ${Theme.palette.secondary.main} !important;
+  color: white;
 }
 .wallet-adapter-button-trigger {
-  background-color: ${Theme.palette.secondary.main} !important;
+  color: white;
 }
 .wallet-adapter-modal-wrapper {
-  font-family: "Silkscreen" !important;
-  background-color: ${Theme.palette.primary.main} !important;
-  color: ${Theme.typography.body1.color} !important;
+    box-sizing: border-box;
+    max-width: 600px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+    flex: 1;
 }
-
 #cmui-modal {
   font-family: "Silkscreen" !important;
-  background-color: ${Theme.palette.secondary.light};
-  box-shadow: 0px 0px 40px 10px ${Theme.palette.secondary.main} !important;
-}
-
-.raffles-featured-box {
-  box-shadow: 0px 0px 40px 10px ${Theme.palette.secondary.main} !important;
-}
-
-.raffles-featured-card {
-  box-shadow: 0px 0px 40px 10px ${Theme.typography.body1.color} !important;
-}
-
-.raffle-information-box {
-  box-shadow: 0px 0px 40px 10px ${Theme.typography.body1.color} !important;
-}
-
-.raffle-information-card {
-  height: 100%;
-  box-shadow: 0px 0px 40px 10px ${Theme.palette.secondary.main} !important;
-}
-
-.raffle-information-modal {
-  height: 100%;
-  box-shadow: 0px 0px 40px -10px ${Theme.palette.secondary.main} !important;
-}
-.xquesting-enrollment-card {
-  padding: 20px;
-  box-shadow: 0px 0px 40px 10px ${Theme.palette.primary.main} !important;
-}
-.xquesting-enrollment-box {
-  padding: 20px;
-  box-shadow: 0px 0px 40px 10px ${Theme.palette.primary.main} !important;
+  color: white;
+  background:none;
 }
 
 .bg-solid {
@@ -85,25 +71,12 @@ button[class*="CTAButton"] {
 
 .bg {
   @media (max-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_BACKGROUND_MOBILE_FILE}");
+    background-color: black;
     background-size: cover;
     background-position: center;
   }
   @media (min-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_BACKGROUND_FILE}");
-    background-size: cover;
-    background-position: center;
-  }
-  min-height: 100vh;
-}
-.xquestingbg {
-  @media (max-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_XQUESTING_BACKGROUND_MOBILE_FILE}");
-    background-size: cover;
-    background-position: center;
-  }
-  @media (min-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_XQUESTING_BACKGROUND_FILE}");
+    background-color: black;
     background-size: cover;
     background-position: center;
   }
@@ -111,12 +84,12 @@ button[class*="CTAButton"] {
 }
 .App-header {
   @media (max-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_BACKGROUND_MOBILE_FILE}");
+    background-color: black;
     background-size: cover;
     background-position: center;
   }
   @media (min-width: 600px) {
-    background: url("${process.env.NEXT_PUBLIC_BACKGROUND_FILE}");
+    background-color: black;
     background-size: cover;
     background-position: center;
   }
@@ -125,17 +98,13 @@ button[class*="CTAButton"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top:40px;
   color: white;
-  padding: 40px 50px 50px 40px;
+  overflow-x:hidden;
 }
 #topbar {
-  background: linear-gradient(
-    180deg,
-    ${Theme.palette.primary.main} 40%,
-    rgba(0, 255, 163, 0.15) 100%
-  );
-  color: ${Theme.typography.body1.color};
+    background-color: black;
+  color: orange;
 }
 #matrixrain-column {
   font-family: "Silkscreen" !important;
@@ -148,17 +117,17 @@ button[class*="CTAButton"] {
 h2, p {
   color: ${Theme.typography.body1.color} !important;
 }
-
 html,
 body {
   font-family: "Silkscreen" !important;
   padding: 0;
   margin: 0;
+
+  overflow-x:hidden;
 }
 
 img {
-border-radius: unset !important;
-width: 50% !important;
+border-radius: 4px;
 height: auto;
 }
 
@@ -174,26 +143,13 @@ height: auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
 }
-
-.undefined {
-}
-
-.swap-container {
-  background-image: linear-gradient(var(--gradient-rotate, 246deg), rgb(218 46 239) 7.97%, rgb(43 106 255) 49.17%, rgb(57 208 216) 92.1%);
-}
-.swap-card {
-  background-image: linear-gradient(140.14deg,rgb(0 182 191 / 15%),rgb(27 22 89 / 10%) 86.61%),linear-gradient(321.82deg,rgb(24 19 77),rgb(27 22 89));
-}
-.MuiMenu-list {
-  background-color: linear-gradient(140.14deg,rgb(0 182 191 / 15%),rgb(27 22 89 / 10%) 86.61%),linear-gradient(321.82deg,rgb(24 19 77),rgb(27 22 89)) !important;
-  background: linear-gradient(140.14deg,rgb(0 182 191 / 15%),rgb(27 22 89 / 10%) 86.61%),linear-gradient(321.82deg,rgb(24 19 77),rgb(27 22 89)) !important;
-}
 .MuiInputBase-input {
 color: ${Theme.typography.body1.color};
 }
 
 .mint-container {
   width: 30vw;
+  color: white;
 }
 
 `;

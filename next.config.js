@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  images: {
+    domains: ["arweave.net"],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -30,4 +33,3 @@ module.exports = {
       process.env.NEXT_PUBLIC_SECONDARY_SECONDARY_COLOR,
   },
 };
-

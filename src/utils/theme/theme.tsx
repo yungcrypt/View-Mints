@@ -1,4 +1,4 @@
-import {createTheme} from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import {
   red,
   orange,
@@ -18,22 +18,45 @@ export const Theme = {
       },
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   typography: {
     url: process.env.NEXT_PUBLIC_TEXT_FONT_FILE!,
     fontFamily: ["Silkscreen"],
     fontSize: "12rem",
+    color: "white",
     h1: {
       fontFamily: "Lato",
-      color: process.env.NEXT_PUBLIC_TEXT_COLOR!,
       fontSize: "12rem",
       fontWeight: 400,
       lineHeight: 1.167,
       lettingSpacing: "-0.01562em",
+      color: "white",
     },
-    body1: {
-      color: process.env.NEXT_PUBLIC_TEXT_COLOR!,
+    h6: {
+      fontFamily: "Lato",
+      fontSize: "12rem",
+      fontWeight: 400,
+      lineHeight: 1.167,
+      lettingSpacing: "-0.01562em",
+      color: "white !important",
+    },
+    body2: {
       fontSize: "smaller",
       fontWeight: 400,
+      color: "white",
+    },
+    body1: {
+      fontSize: "smaller",
+      fontWeight: 400,
+      color: "white",
     },
   },
   Button: {

@@ -4,9 +4,19 @@ import Mint from "../containers/Mint";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { Navbar } from "../components/navbar/navbar";
 import { useWallet } from "@solana/wallet-adapter-react";
+import SelectorScreen from "src/components/selector/showcase";
+import { Show } from "../fetch/fetchNfts";
+import { SelectorBox } from "src/components/selector/container";
+import {atom, useRecoilState} from "recoil"
+import {selectedAtom} from "../components/selector/atoms"
+import {WalletMultiButton} from "@solana/wallet-adapter-material-ui"
+import {CountDown} from "../components/countdown/counter"
+import {Remain} from "../components/remain/Remain"
+import {Price} from "../components/price/Price"
 
 export const MintPage: FC = () => {
-  const { publicKey } = useWallet();
+  const [selection, setSelection] = useRecoilState(selectedAtom)
+  const { publicKey, connected } = useWallet();
   const network = "devnet" as WalletAdapterNetwork;
   const rpcHost = "https://api.devnet.solana.com";
   const connection = new anc.web3.Connection(
@@ -15,27 +25,36 @@ export const MintPage: FC = () => {
 
   return (
     <>
-      <Navbar />
-        {publicKey && (
+      <Navbar/>
       <div className="App-header">
+      {publicKey && (
           <Mint
-            candyMachineId={new anc.web3.PublicKey(
-    "GEoLprSfmRdkQ9UBhsZLNo8yyMkJXTfYBQXgshB91YNw"
-  )}
+            candyMachineId={
+              new anc.web3.PublicKey(
+                "D5BDMoZy2dQiS445w79XieWScjuvtXcmXATc83JmQqNq"
+              )
+            }
             connection={connection}
             rpcHost={rpcHost}
             network={network}
           />
-          <Mint
-            candyMachineId={new anc.web3.PublicKey(
-    "4Ei6S1UzKdJB5jEQ62YJYBAirVTnivoqFDyFFRaqbzQ6"
-  )}
-            connection={connection}
-            rpcHost={rpcHost}
-            network={network}
-          />
-      </div>
-        )}
+      )}
+        <div style={{
+            display:"flex",
+            textAlign:"center"
+
+          }}>
+        { connected && 
+          <Remain />
+          }
+          </div>
+        { connected && 
+          <SelectorBox>
+            <Show />
+            <SelectorScreen/>
+          </SelectorBox>
+        }
+        </div>
     </>
   );
 };

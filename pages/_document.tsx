@@ -4,11 +4,16 @@ import Script from "next/script";
 export default function Document() {
   return (
     <Html>
-      <Head />
+      <Head >
+        <link
+          rel="stylesheet"
+          href="https://video-react.github.io/assets/video-react.css"
+        />
+        </Head>
       <body>
+        
         <Main />
         <NextScript />
-        <script src="/wasm_exec.js"></script>
       </body>
     </Html>
   );
