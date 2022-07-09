@@ -20,6 +20,7 @@ import { GlobalStyle } from "../src/utils/styleKit";
 
 import "abort-controller/polyfill";
 import "node_modules/video-react/dist/video-react.css"
+import {UserProvider} from "../src/context/UserContext"
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 require("../styles/globals.css");
@@ -47,11 +48,13 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
             <WalletDialogProvider>
+              <UserProvider>
               <GlobalStyle />
               {
                 //@ts-ignore
                 <Component {...pageProps} />
               }
+              </UserProvider>
             </WalletDialogProvider>
           </WalletModalProvider>
         </WalletProvider>

@@ -93,12 +93,11 @@ button[class*="CTAButton"] {
     background-size: cover;
     background-position: center;
   }
-  min-height: 100vh;
+  min-height: 98vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top:40px;
   color: white;
   overflow-x:hidden;
 }
@@ -150,6 +149,27 @@ color: ${Theme.typography.body1.color};
 .mint-container {
   width: 30vw;
   color: white;
+}
+
+/* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+  ::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px ;
+}
+
+/* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 `;
